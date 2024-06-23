@@ -1,0 +1,24 @@
+.basket-size {
+	width: 24px;
+	height: 24px;
+	background: $greenDarkColor;
+	border-radius: 50%;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	font-weight: 500;
+	font-size: 12px;
+	line-height: 15px;
+	text-align: center;
+	letter-spacing: 0.06em;
+	text-transform: uppercase;
+	transition: .3s;
+	transition-timing-function: ease;
+
+	&:hover {
+		transform: scale(1.2);
+		background: $blackColor;
+		color: $greenDarkColor;
+		transition: .3s;
+	}
+}

@@ -1,0 +1,72 @@
+.modal-header {
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	background: $whiteColor;
+	padding: 32px;
+	z-index: 999;
+
+	animation-name: modal-header;
+	animation-duration: .3s;
+	animation-fill-mode: forwards;
+	transform: translateX(-100%);
+
+	&__menu {
+		display: none;
+		margin-bottom: 32px;
+	}
+
+	&__close {
+		position: absolute;
+		top: 24px;
+		right: 24px;
+		width: 32px;
+		height: 32px;
+		cursor: pointer;
+		user-select: none;
+		transition: opacity .2s;
+
+		&:hover {
+			opacity: 0.7;
+		}
+	}
+
+	&__call {
+		margin-top: 52px;
+		display: none;
+	}
+
+	&--close {
+		animation-name: modal-close;
+		animation-duration: .3s;
+		animation-fill-mode: forwards;
+		transform: translateX(0);
+	}
+
+	@keyframes modal-header {
+		100% {
+			transform: translateX(0);
+		}
+	}
+
+	@keyframes modal-close {
+		100% {
+			transform: translateX(-100%);
+		}
+	}
+
+}
+
+@media (max-width: 780px) {
+	.modal-header {
+		&__call {
+			display: block;
+		}
+
+		&__menu {
+			display: flex;
+		}
+	}
+}

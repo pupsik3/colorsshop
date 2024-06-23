@@ -1,0 +1,23 @@
+.header-menu {
+	display: flex;
+	align-items: flex-end;
+	grid-column-gap: 24px;
+
+	&__item {
+		width: 22px;
+		height: 22px;
+		transition: transform .3s;
+		transition-timing-function: ease;
+
+		&:hover {
+			transform: scale(1.2);
+		}
+
+		& img {
+			width: inherit;
+			height: inherit;
+			user-select: none;
+			pointer-events: none;
+		}
+	}
+}

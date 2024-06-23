@@ -1,0 +1,249 @@
+.products {
+  width: 100%;
+  overflow: hidden;
+
+  &__title {
+    font-weight: 400;
+    font-size: 36px;
+    line-height: 88%;
+    letter-spacing: -0.04em;
+    margin: 48px 0;
+    display: none;
+  }
+
+  &__breadcrumbs {
+    display: none;
+  }
+
+  &__info {
+    display: flex;
+    justify-content: space-between;
+    font-weight: 500;
+    font-size: 12px;
+    line-height: 15px;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+  }
+
+  &__sort-title {
+    display: flex;
+    align-items: center;
+    grid-column-gap: 4px;
+    cursor: pointer;
+    transition: opacity .2s;
+
+    &:hover {
+      opacity: 0.7;
+    }
+  }
+
+  &__grid {
+    margin-top: 44px;
+    overflow: hidden;
+    min-height: 20vh;
+  }
+
+  &__item {
+    width: 284px;
+    height: 378px;
+    margin-bottom: 16px;
+  }
+
+  &__sort {
+    position: relative;
+  }
+
+  &__sort-list {
+    position: absolute;
+    top: 0;
+    width: 280px;
+    right: 0;
+    background: $whiteColor;
+    z-index: 3;
+    overflow: hidden;
+
+    animation-name: products-modal;
+    animation-duration: .2s;
+    animation-delay: .2s;
+    animation-fill-mode: forwards;
+    opacity: 0;
+    transform: translateX(100%);
+
+    &--close {
+      animation-name: products-modal-close;
+      animation-duration: .2s;
+      animation-delay: 0s;
+      animation-fill-mode: forwards;
+      opacity: 1;
+      transform: translateX(0);
+    }
+
+    @keyframes products-modal-close {
+      100% {
+        opacity: 0;
+        transform: translateX(100%);
+      }
+    }
+  }
+
+  &__sort-item {
+    font-weight: 500;
+    font-size: 12px;
+    line-height: 15px;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    padding: 17px 0 16px 24px;
+    cursor: pointer;
+    transition: background .2s;
+
+    &:hover {
+      background: $greenDarkColor;
+    }
+
+    &--active {
+      background: $greenDarkColor;
+    }
+  }
+
+  &__back {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    background: #000000;
+    z-index: 2;
+
+    animation-name: products-back;
+    animation-duration: .2s;
+    animation-fill-mode: forwards;
+    opacity: 0;
+
+    &--close {
+      animation-name: products-back-close;
+      animation-duration: .2s;
+      animation-delay: .2s;
+      animation-fill-mode: forwards;
+      opacity: 1;
+    }
+
+    @keyframes products-back-close {
+      100% {
+        opacity: 0;
+      }
+    }
+  }
+
+  &__open-filtres {
+    display: none;
+    cursor: pointer;
+    transition: opacity .2s;
+
+    &:hover {
+      opacity: 0.7;
+    }
+  }
+
+  &__filtres-back {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    background: $darkColor;
+    opacity: 0.7;
+    z-index: 3;
+  }
+
+  &__empty {
+    height: 50vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  &__empty-title {
+    font-size: 28px;
+    font-weight: 400;
+    text-transform: uppercase;
+
+    animation-name: empty-title;
+    animation-duration: .2s;
+    animation-fill-mode: forwards;
+    transform: scale(0);
+    opacity: 0;
+  }
+
+  @keyframes empty-title {
+    100% {
+      transform: scale(1);
+      opacity: 1;
+    }
+  }
+
+  @keyframes products-back {
+    100% {
+      opacity: 0.7;
+    }
+  }
+
+  @keyframes products-modal {
+    100% {
+      opacity: 1;
+      transform: translateX(0);
+    }
+  }
+
+}
+
+@media (max-width: 1200px) {
+  .products {
+    &__item {
+      width: calc(33% - 18px);
+      height: 378px;
+      margin-bottom: 16px;
+    }
+
+    &__length {
+      display: none;
+    }
+
+    &__open-filtres {
+      display: block;
+    }
+  }
+}
+
+@media (max-width: 950px) {
+  .products {
+    &__item {
+      width: calc(50% - 18px);
+      height: 400px;
+      margin-bottom: 24px;
+    }
+  }
+}
+
+@media (max-width: 780px) {
+  .products {
+    border-top: 1px solid rgba(30, 31, 31, 0.06);
+    padding-top: 16px;
+
+    &__title {
+      display: block;
+    }
+
+    &__breadcrumbs {
+      display: flex;
+    }
+  }
+}
+
+@media (max-width: 600px) {
+  .products {
+    &__item {
+      width: calc(50% - 15px);
+      height: 270px;
+    }
+  }
+}

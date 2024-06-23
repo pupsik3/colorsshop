@@ -1,0 +1,23 @@
+.loading {
+	position: fixed;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100vh;
+	background: rgb(13, 13, 13);
+	display: flex;
+	justify-content: center;
+	align-items: center;
+
+	&__gif {
+		width: 10%;
+	}
+}
+
+@media (max-width: 780px) {
+	.loading {
+		&__gif {
+			width: 30%;
+		}
+	}
+}

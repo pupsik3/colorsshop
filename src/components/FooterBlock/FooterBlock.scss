@@ -1,0 +1,11 @@
+.footer {
+	width: 100%;
+	height: 312px;
+	background: $darkColor;
+}
+
+@media (max-width: 780px) {
+	.footer {
+		height: 204px;
+	}
+}

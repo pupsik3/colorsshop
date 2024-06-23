@@ -1,0 +1,40 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter&display=swap');
+
+$blackColor: #1F2020;
+$whiteColor: #FFFFFF;
+$darkColor: #000000;
+
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+ul,
+li {
+    list-style: none;
+}
+
+a {
+    text-decoration: none;
+    color: unset;
+}
+
+body {
+    font-family: 'Inter', sans-serif;
+    color: $blackColor;
+    overflow-x: hidden;
+
+    &::-webkit-scrollbar {
+        width: 5px;
+    }
+
+    &::-webkit-scrollbar-track {
+        background: $darkColor;
+    }
+
+    &::-webkit-scrollbar-thumb {
+        background-color: $whiteColor;
+        border: 1px solid $darkColor;
+    }
+}

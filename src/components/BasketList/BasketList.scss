@@ -1,0 +1,56 @@
+.basket-list {
+	&__header {
+		display: flex;
+		justify-content: space-between;
+		font-weight: 400;
+		font-size: 14px;
+		line-height: 112%;
+	}
+
+	&__clear {
+		opacity: 0.4;
+		transition: opacity .2s;
+
+		&:hover {
+			opacity: 1;
+		}
+	}
+
+	&__list {
+		display: flex;
+		flex-direction: column;
+		margin-top: 10px;
+		height: 60vh;
+		overflow-y: auto;
+		overflow-x: hidden;
+
+		&::-webkit-scrollbar {
+			width: 5px;
+		}
+
+		&::-webkit-scrollbar-track {
+			background: $whiteColor;
+		}
+
+		&::-webkit-scrollbar-thumb {
+			background-color: $darkColor;
+			border: 1px solid $whiteColor;
+		}
+	}
+}
+
+@media (max-height: 740px) {
+	.basket-list {
+		&__list {
+			height: 390px;
+		}
+	}
+}
+
+@media (max-height: 620px) {
+	.basket-list {
+		&__list {
+			height: 300px;
+		}
+	}
+}
